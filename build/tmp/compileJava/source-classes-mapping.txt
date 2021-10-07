@@ -1,4 +1,2 @@
-com/tistory/aristatait/web/HelloController.java
- com.tistory.aristatait.web.HelloController
 com/tistory/aristatait/Application.java
  com.tistory.aristatait.Application
