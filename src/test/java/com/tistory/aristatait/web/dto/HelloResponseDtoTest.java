@@ -9,14 +9,14 @@ public class HelloResponseDtoTest {
     public void 롬복_기능_테스트() {
         //given
         String name = "test";
-        int age = 10;
+        int amount = 10;
 
         //when
-        HelloResponseDto dto = new HelloResponseDto(name, age);
+        HelloResponseDto dto = new HelloResponseDto(name, amount);
 
         //then
         Assertions.assertThat(dto.getName()).isEqualTo(name);
-        Assertions.assertThat(dto.getAge()).isEqualTo(age);
+        Assertions.assertThat(dto.getAmount()).isEqualTo(amount);
 
     }
 }
