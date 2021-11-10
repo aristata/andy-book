@@ -1,0 +1,45 @@
+buildscript {
+    // build.gradle 에서 사용하는 전역변수를 설정
+    ext {
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id 'java'
+    id 'eclipse'
+}
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group 'com.aristatait'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    testImplementation('junit:junit:4.12')
+
+    // lombok
+    implementation('org.projectlombok:lombok')
+
+    // spring data jpa
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
+    // h2db
+    implementation("com.h2database:h2")
+}
