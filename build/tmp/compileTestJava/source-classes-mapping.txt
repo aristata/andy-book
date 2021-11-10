@@ -1,2 +1,0 @@
-com/tistory/aristatait/HelloControllerTest.java
- com.tistory.aristatait.HelloControllerTest

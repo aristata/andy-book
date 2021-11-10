@@ -1,2 +1,0 @@
-com/tistory/aristatait/Application.java
- com.tistory.aristatait.Application
