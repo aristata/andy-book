@@ -1,4 +1,4 @@
-package com.tistory.aristatait.web;
+package com.tistory.aristatait.web.controller;
 
 import com.tistory.aristatait.web.dto.HelloResponseDto;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.tistory.aristatait.web;
+package com.tistory.aristatait.web.controller;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
