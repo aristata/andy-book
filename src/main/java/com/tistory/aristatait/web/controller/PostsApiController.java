@@ -1,12 +1,11 @@
 package com.tistory.aristatait.web.controller;
 
 import com.tistory.aristatait.service.posts.PostsService;
+import com.tistory.aristatait.web.dto.PostsResponseDto;
 import com.tistory.aristatait.web.dto.PostsSaveRequestDto;
+import com.tistory.aristatait.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 최초 작성자 castlepeople
@@ -19,10 +18,34 @@ public class PostsApiController {
 
     private final PostsService postsService;
 
+    /**
+     * 등록
+     */
     @PostMapping("/posts")
     public Long save(
             @RequestBody PostsSaveRequestDto requestDto
     ) {
         return postsService.save(requestDto);
+    }
+
+    /**
+     * 수정
+     */
+    @PutMapping("/posts/{id}")
+    public Long update(
+            @PathVariable Long id,
+            @RequestBody PostsUpdateRequestDto requestDto
+    ) {
+        return postsService.update(id, requestDto);
+    }
+
+    /**
+     * 조회
+     */
+    @GetMapping("/posts/{id}")
+    public PostsResponseDto findById(
+            @PathVariable Long id
+    ) {
+        return postsService.findById(id);
     }
 }
