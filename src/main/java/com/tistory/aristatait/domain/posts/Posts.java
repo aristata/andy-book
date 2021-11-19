@@ -39,6 +39,6 @@ public class Posts {
             String content
     ) {
         this.title = title;
-        this.content = content
+        this.content = content;
     }
 }
