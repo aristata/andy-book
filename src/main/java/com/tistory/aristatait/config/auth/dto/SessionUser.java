@@ -3,12 +3,14 @@ package com.tistory.aristatait.config.auth.dto;
 import com.tistory.aristatait.domain.user.User;
 import lombok.Getter;
 
+import java.io.Serializable;
+
 /**
  * 최초 작성자 castlepeople
  * 최초 작성일 2021-11-19
  **/
 @Getter
-public class SessionUser {
+public class SessionUser implements Serializable {
     private String name;
     private String email;
     private String picture;
