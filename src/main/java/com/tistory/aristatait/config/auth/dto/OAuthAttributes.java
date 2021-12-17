@@ -48,21 +48,28 @@ public class OAuthAttributes {
         return ofGoogle(userNameAttributeName, attributes);
     }
 
+    /**
+     * 네이버용 생성자
+     */
     private static OAuthAttributes ofNaver(
             String userNameAttributeName,
             Map<String, Object> attributes
     ) {
+        // 네이버에서 회원 조회시 반환되는 JSON 형태가 response 에 감싸여 있기 때문에 한번 풀고 간다
         Map<String, Object> response = (Map<String, Object>) attributes.get("response");
 
         return OAuthAttributes.builder()
-                .name((String) attributes.get("name"))
-                .email((String) attributes.get("email"))
-                .picture((String) attributes.get("profile_image"))
+                .name((String) response.get("name"))
+                .email((String) response.get("email"))
+                .picture((String) response.get("profile_image"))
                 .attributes(response)
                 .nameAttributeKey(userNameAttributeName)
                 .build();
     }
 
+    /**
+     * 구글용 생성자
+     */
     private static OAuthAttributes ofGoogle(
             String userNameAttributeName,
             Map<String, Object> attributes
