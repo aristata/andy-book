@@ -2,9 +2,14 @@ package com.tistory.aristatait;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
-@EnableJpaAuditing //JPA Auditing 활성화
+
+/**
+ * import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+ * EnableJpaAuditing 을 JpaConfig 파일로 분리
+ * 분리한 이유는 WebMvcTest 를 할때 Application 에 EnableJpaAuditing 이 붙어 있으면 JpaAuditing 이 적용이 된다.
+ */
+//@EnableJpaAuditing //JPA Auditing 활성화
 @SpringBootApplication // 스프링 부트의 자동 설정, 스프링 Bean 읽기와 생성등등의 기능을 활성화
 public class Application {
     public static void main(String[] args) {
